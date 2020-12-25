@@ -1,8 +1,8 @@
 # MarsAssignment
 
-#List of Method names,Request and Responses respectively
+# List of Method names,Request and Responses respectively
 
-#To add employee
+# To add employee
 
 Request Method : POST
 
@@ -27,7 +27,7 @@ Response:
 
 *************************************************************
 
-#To get all the Employee count
+# To get all the Employee count
 
 Request Method : GET
 
@@ -40,7 +40,7 @@ Response:
 
 *************************************************************
 
-#To delete an Employee 
+# To delete an Employee 
 
 Request Method : DELETE
  
@@ -51,7 +51,7 @@ Response Code: 200
 
 *************************************************************
 
-#To get single Employee data based on id
+# To get single Employee data based on id
 
 Request Method : GET 
 
@@ -67,7 +67,7 @@ Response:
 
 *************************************************************
 
-#To get all Employees  
+# To get all Employees  
 
 Request Method : GET 
 
@@ -84,7 +84,7 @@ Response:
 
 *************************************************************
 
-#To update/edit Employee  
+# To update/edit Employee  
 
 Request Method : PUT 
 Request Url: http://localhost:8080/rest/updateemployee/{employeeId}
@@ -107,17 +107,17 @@ Response:
 
 *************************************************************
 
-#Swagger URL for Html Documentation
+# Swagger URL for Html Documentation
 
 http://localhost:8080/swagger-ui.html
 
-# Swagger URL For JSON  Documentation
+#  Swagger URL For JSON  Documentation
 
 http://localhost:8080/v2/api-docs
 
 
 *************************************************************
-#For Storing the data H2 database used.
+# For Storing the data H2 database used.
 
 
 
