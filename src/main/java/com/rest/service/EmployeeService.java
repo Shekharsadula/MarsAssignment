@@ -6,7 +6,7 @@ import com.rest.bean.Employee;
 
 public interface EmployeeService {
 	
- public void addEmployee(Employee employee);
+ public Employee addEmployee(Employee employee);
 	
  public Employee getEmployee(Long employeeId);
 

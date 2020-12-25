@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.rest.bean.Employee;
+import com.rest.exception.ResourceNotFoundException;
 import com.rest.jpa.EmployeeRepository;
 
  
@@ -14,34 +15,37 @@ public class EmployeeServiceImpl implements EmployeeService{
 
  @Autowired
  private EmployeeRepository employeeRepository;
-
- public void setEmployeeRepository(EmployeeRepository employeeRepository) {
-  this.employeeRepository = employeeRepository;
+ 
+ @Override
+ public Employee addEmployee(Employee employee){
+	 return employeeRepository.save(employee);
  }
  
- 
- public void addEmployee(Employee employee){
-	 employeeRepository.save(employee);
- }
- 
+ @Override
  public Employee getEmployee(Long employeeId) {
 	 Optional<Employee> optEmp = employeeRepository.findById(employeeId);
+	 if(!optEmp.isPresent())
+		 throw new ResourceNotFoundException("Employee Not Found with Id :"+employeeId, employeeId);
 	 return optEmp.get();
  }
-
+ 
+ @Override
  public void updateEmployee(Employee employee) {
 	 employeeRepository.save(employee);
  }
-
+ 
+ @Override
  public void deleteEmployee(Long employeeId){
 	 employeeRepository.deleteById(employeeId);
  }
  
+ @Override
  public List<Employee> listEmployees() {
   List<Employee> employees = employeeRepository.findAll();
   return employees;
  }
-
+ 
+ @Override
  public long employeeCount() {
 	 return  employeeRepository.count();
 }
